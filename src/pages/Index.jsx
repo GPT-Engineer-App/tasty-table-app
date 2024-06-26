@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 function Index() {
   return (
-    <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-      <h1 className="text-3xl font-bold">Welcome to Our Restaurant</h1>
-      <p className="text-lg">
+    <main className="flex flex-1 flex-col items-center justify-center gap-4 p-4 lg:gap-6 lg:p-6">
+      <h1 className="text-4xl font-bold">Welcome to Our Restaurant</h1>
+      <p className="text-lg text-center">
         Explore our delicious menu, add items to your cart, and check out our upcoming events!
       </p>
       <div className="flex space-x-4">
