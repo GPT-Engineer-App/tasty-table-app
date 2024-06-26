@@ -1,18 +1,25 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
+  const updateQuantity = (item, quantity) => {
+    setCart(cart.map((cartItem) => 
+      cartItem.id === item.id ? { ...cartItem, quantity: quantity } : cartItem
+    ));
+  };
+
   const removeFromCart = (item) => {
     setCart(cart.filter((cartItem) => cartItem.id !== item.id));
   };
 
   const handleCheckout = () => {
-    navigate("/checkout");
+    navigate("/checkout", { state: { cart } });
   };
 
   return (
@@ -30,7 +37,15 @@ function Cart() {
               <CardContent>
                 <p>Category: {item.category}</p>
                 <p>Price: ${item.price}</p>
-                <Button onClick={() => removeFromCart(item)}>Remove</Button>
+                <div className="flex items-center space-x-2">
+                  <Input 
+                    type="number" 
+                    value={item.quantity} 
+                    onChange={(e) => updateQuantity(item, e.target.value)} 
+                    className="w-16"
+                  />
+                  <Button onClick={() => removeFromCart(item)}>Remove</Button>
+                </div>
               </CardContent>
             </Card>
           ))}

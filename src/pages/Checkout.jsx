@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Checkout() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [paymentDetails, setPaymentDetails] = useState({
     cardNumber: "",
     expiryDate: "",
@@ -19,6 +22,7 @@ function Checkout() {
   const handlePayment = () => {
     // Implement payment processing logic here
     console.log("Processing payment with details:", paymentDetails);
+    navigate("/receipt", { state: { cart: location.state.cart, paymentDetails } });
   };
 
   return (
