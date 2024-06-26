@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 function Receipt() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { cart, paymentDetails } = location.state;
 
   return (
@@ -27,6 +29,9 @@ function Receipt() {
           </div>
         </CardContent>
       </Card>
+      <Button onClick={() => navigate("/")} className="mt-4 bg-blue-500 text-white">
+        Back to Home
+      </Button>
     </main>
   );
 }
