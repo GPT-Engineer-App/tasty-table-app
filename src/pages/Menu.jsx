@@ -16,7 +16,14 @@ function Menu() {
   const [deliveryOption, setDeliveryOption] = useState("table");
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    if (existingItem) {
+      setCart(cart.map(cartItem => 
+        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      ));
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
     toast.success(`${item.name} added to cart!`);
   };
 
