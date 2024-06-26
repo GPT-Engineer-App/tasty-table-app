@@ -6,6 +6,7 @@ import Events from "./pages/Events.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Receipt from "./pages/Receipt.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Search from "./pages/Search.jsx";
 import Restaurant1 from "./pages/Restaurant1.jsx";
 import Restaurant2 from "./pages/Restaurant2.jsx";
 import Restaurant3 from "./pages/Restaurant3.jsx";
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/receipt" element={<Receipt />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/restaurant1/*" element={<Restaurant1 />} />
+        <Route exact path="/search" element={<Search />} />
         <Route exact path="/restaurant2/*" element={<Restaurant2 />} />
         <Route exact path="/restaurant3/*" element={<Restaurant3 />} />
       </Routes>
