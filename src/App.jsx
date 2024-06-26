@@ -12,6 +12,7 @@ import Restaurant2 from "./pages/Restaurant2.jsx";
 import Restaurant3 from "./pages/Restaurant3.jsx";
 import Signup from "./pages/Signup.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
+import OrderStatus from "./pages/OrderStatus.jsx";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/restaurant2/*" element={<Restaurant2 />} />
         <Route exact path="/restaurant3/*" element={<Restaurant3 />} />
         <Route exact path="/product-details" element={<ProductDetails />} />
+        <Route exact path="/order-status" element={<OrderStatus />} />
       </Routes>
     </Router>
   );
