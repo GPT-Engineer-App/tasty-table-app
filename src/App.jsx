@@ -5,12 +5,13 @@ import Cart from "./pages/Cart.jsx";
 import Events from "./pages/Events.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Receipt from "./pages/Receipt.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Navbar, { SecondHeader } from "./components/Navbar.jsx";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <SecondHeader />
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route exact path="/menu" element={<Menu />} />
