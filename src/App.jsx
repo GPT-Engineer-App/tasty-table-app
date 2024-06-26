@@ -6,7 +6,7 @@ import Events from "./pages/Events.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Receipt from "./pages/Receipt.jsx";
 import Navbar from "./components/Navbar.jsx";
-import SecondHeader from "./components/SecondHeader.jsx";
+import SecondHeader from "./components/SecondHeader";
 
 function App() {
   return (
