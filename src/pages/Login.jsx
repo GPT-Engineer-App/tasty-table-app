@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -19,7 +20,7 @@ export default function Login() {
               <Input
                 id="email"
                 type="email"
-                 lder="m@example.com"
+                placeholder="m@example.com"
                 required
               />
             </div>
@@ -41,9 +42,9 @@ export default function Login() {
           </div>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
-            <a href="#" className="underline">
+            <Link to="/signup" className="underline">
               Sign up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -57,5 +58,5 @@ export default function Login() {
         />
       </div>
     </div>
-  )
+  );
 }
