@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar.jsx";
 import Restaurant1 from "./pages/Restaurant1.jsx";
 import Restaurant2 from "./pages/Restaurant2.jsx";
 import Restaurant3 from "./pages/Restaurant3.jsx";
+import Signup from "./pages/Signup.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/events" element={<Events />} />
         <Route exact path="/checkout" element={<Checkout />} />
         <Route exact path="/receipt" element={<Receipt />} />
+        <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/restaurant1/*" element={<Restaurant1 />} />
         <Route exact path="/restaurant2/*" element={<Restaurant2 />} />
         <Route exact path="/restaurant3/*" element={<Restaurant3 />} />
