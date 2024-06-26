@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   const removeFromCart = (item) => {
     setCart(cart.filter((cartItem) => cartItem.id !== item.id));
+  };
+
+  const handleCheckout = () => {
+    navigate("/checkout");
   };
 
   return (
@@ -29,6 +35,11 @@ function Cart() {
             </Card>
           ))}
         </div>
+      )}
+      {cart.length > 0 && (
+        <Button onClick={handleCheckout} className="mt-4">
+          Proceed to Checkout
+        </Button>
       )}
     </main>
   );

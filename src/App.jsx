@@ -3,6 +3,7 @@ import Index from "./pages/Index.jsx";
 import Menu from "./pages/Menu.jsx";
 import Cart from "./pages/Cart.jsx";
 import Events from "./pages/Events.jsx";
+import Checkout from "./pages/Checkout.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/menu" element={<Menu />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/events" element={<Events />} />
+        <Route exact path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

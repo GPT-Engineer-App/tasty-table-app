@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const menuItems = [
   { id: 1, name: "Burger", category: "Food", price: 10 },
@@ -11,6 +12,8 @@ const menuItems = [
 function Menu() {
   const [cart, setCart] = useState([]);
 
+  const [deliveryOption, setDeliveryOption] = useState("table");
+
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
@@ -18,6 +21,17 @@ function Menu() {
   return (
     <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
       <h1 className="text-3xl font-bold">Menu</h1>
+      <div className="mb-4">
+        <Select onValueChange={setDeliveryOption}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Delivery Option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="table">Table Delivery</SelectItem>
+            <SelectItem value="pickup">Pickup</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {menuItems.map((item) => (
           <Card key={item.id}>
