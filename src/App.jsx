@@ -6,6 +6,9 @@ import Events from "./pages/Events.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Receipt from "./pages/Receipt.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Restaurant1 from "./pages/Restaurant1.jsx";
+import Restaurant2 from "./pages/Restaurant2.jsx";
+import Restaurant3 from "./pages/Restaurant3.jsx";
 
 function App() {
   return (
