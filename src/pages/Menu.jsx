@@ -5,9 +5,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 
 const menuItems = [
-  { id: 1, name: "Burger", category: "Food", price: 10 },
-  { id: 2, name: "Fries", category: "Snacks", price: 5 },
-  { id: 3, name: "Coke", category: "Beverages", price: 3 },
+  { id: 1, name: "Burger", category: "Food", price: 10, description: "A delicious beef burger", image: "/images/burger.jpg" },
+  { id: 2, name: "Fries", category: "Snacks", price: 5, description: "Crispy golden fries", image: "/images/fries.jpg" },
+  { id: 3, name: "Coke", category: "Beverages", price: 3, description: "Refreshing Coca-Cola", image: "/images/coke.jpg" },
 ];
 
 function Menu() {
@@ -41,6 +41,8 @@ function Menu() {
               <CardTitle>{item.name}</CardTitle>
             </CardHeader>
             <CardContent>
+              <img src={item.image} alt={item.name} className="mb-2 w-full h-32 object-cover" />
+              <p>{item.description}</p>
               <p>Category: {item.category}</p>
               <p>Price: ${item.price}</p>
               <Button onClick={() => addToCart(item)}>Add to Cart</Button>
