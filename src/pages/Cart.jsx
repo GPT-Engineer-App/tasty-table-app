@@ -31,44 +31,43 @@ function Cart() {
   };
 
   return (
-    <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+    <main className="flex flex-col items-center gap-4 p-4 lg:gap-6 lg:p-6 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold">Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full space-y-4">
           {cart.map((item) => (
-            <Card key={item.id}>
-              <CardHeader>
-                <CardTitle>{item.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <img src={item.image} alt={item.name} className="mb-2 w-full h-32 object-cover" />
-                <p>Category: {item.category}</p>
-                <p>Price: ${item.price}</p>
-                <div className="flex items-center space-x-2">
-                  <Button onClick={() => updateQuantity(item, item.quantity - 1)}>-</Button>
-                  <Input 
-                    type="number" 
-                    value={item.quantity} 
-                    onChange={(e) => updateQuantity(item, e.target.value)} 
-                    className="w-16"
-                  />
-                  <Button onClick={() => updateQuantity(item, item.quantity + 1)}>+</Button>
-                  <Button onClick={() => removeFromCart(item)} className="bg-red-500 text-white">Remove</Button>
+            <Card key={item.id} className="flex items-center justify-between p-4">
+              <div className="flex items-center space-x-4">
+                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
+                <div>
+                  <CardTitle>{item.name}</CardTitle>
+                  <p>${item.price.toFixed(2)}</p>
                 </div>
-              </CardContent>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Button onClick={() => updateQuantity(item, item.quantity - 1)}>-</Button>
+                <Input 
+                  type="number" 
+                  value={item.quantity} 
+                  onChange={(e) => updateQuantity(item, e.target.value)} 
+                  className="w-16 text-center"
+                />
+                <Button onClick={() => updateQuantity(item, item.quantity + 1)}>+</Button>
+                <Button onClick={() => removeFromCart(item)} className="bg-red-500 text-white">Remove</Button>
+              </div>
             </Card>
           ))}
         </div>
       )}
       {cart.length > 0 && (
-        <div className="mt-4">
+        <div className="w-full mt-4 space-y-4">
           <p className="text-xl font-bold">Total: ${calculateTotal()}</p>
-          <Button onClick={handleCheckout} className="mt-4 bg-blue-500 text-white">
+          <Button onClick={handleCheckout} className="w-full bg-blue-500 text-white">
             Proceed to Checkout
           </Button>
-          <Button onClick={() => navigate("/menu")} className="mt-4 ml-4 bg-gray-500 text-white">
+          <Button onClick={() => navigate("/menu")} className="w-full bg-gray-500 text-white">
             Continue Shopping
           </Button>
         </div>
