@@ -40,4 +40,5 @@ function SecondHeader() {
   );
 }
 
-export { Navbar, SecondHeader };
+export default Navbar;
+export { SecondHeader };
