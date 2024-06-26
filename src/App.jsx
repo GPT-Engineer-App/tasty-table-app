@@ -1,19 +1,22 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
-import SharedLayout from "./components/SharedLayout.jsx";
-import Login from "./pages/Login.jsx";
+import Menu from "./pages/Menu.jsx";
+import Cart from "./pages/Cart.jsx";
+import Events from "./pages/Events.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Index />} />
-          {/* Add more routes here as needed */}
-        </Route>
+        <Route exact path="/" element={<Index />} />
+        <Route exact path="/menu" element={<Menu />} />
+        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/events" element={<Events />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;
