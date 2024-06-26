@@ -67,7 +67,7 @@ function Checkout() {
                 required
               />
             </div>
-            <Button onClick={handlePayment}>Pay Now</Button>
+            <Button onClick={handlePayment} className="bg-blue-500 text-white">Pay Now</Button>
           </div>
         </CardContent>
       </Card>

@@ -5,9 +5,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 
 const menuItems = [
-  { id: 1, name: "Burger", category: "Food", price: 10, description: "A delicious beef burger", image: "/images/burger.jpg" },
-  { id: 2, name: "Fries", category: "Snacks", price: 5, description: "Crispy golden fries", image: "/images/fries.jpg" },
-  { id: 3, name: "Coke", category: "Beverages", price: 3, description: "Refreshing Coca-Cola", image: "/images/coke.jpg" },
+  { id: 1, name: "Grilled Chicken Sandwich", category: "Sandwich", price: 8.99, description: "A delicious grilled chicken sandwich", image: "/images/grilled-chicken-sandwich.jpg" },
+  { id: 2, name: "Classic Beef Burger", category: "Burger", price: 10.49, description: "A classic beef burger", image: "/images/classic-beef-burger.jpg" },
+  { id: 3, name: "Caesar Salad", category: "Salad", price: 7.49, description: "A fresh Caesar salad", image: "/images/caesar-salad.jpg" },
 ];
 
 function Menu() {
